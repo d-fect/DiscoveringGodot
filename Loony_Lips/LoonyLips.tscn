@@ -59,11 +59,11 @@ text = "DisplayText"
 autowrap = true
 
 [node name="InputContainer" type="HBoxContainer" parent="VBoxContainer"]
-visible = false
-margin_top = 481.0
+margin_top = 479.0
 margin_right = 976.0
-margin_bottom = 554.0
+margin_bottom = 552.0
 custom_constants/separation = 12
+alignment = 1
 
 [node name="PlayerText" type="LineEdit" parent="VBoxContainer/InputContainer"]
 margin_right = 821.0
@@ -87,30 +87,5 @@ margin_right = 976.0
 margin_bottom = 68.0
 custom_fonts/font = SubResource( 4 )
 text = "Ok"
-
-[node name="RestartContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 479.0
-margin_right = 976.0
-margin_bottom = 552.0
-custom_constants/separation = 12
-alignment = 1
-
-[node name="RestartButton" type="TextureButton" parent="VBoxContainer/RestartContainer"]
-margin_left = 348.0
-margin_right = 421.0
-margin_bottom = 73.0
-rect_min_size = Vector2( 73, 73 )
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-expand = true
-
-[node name="RestartLabel" type="Label" parent="VBoxContainer/RestartContainer"]
-margin_left = 433.0
-margin_top = 5.0
-margin_right = 627.0
-margin_bottom = 68.0
-custom_fonts/font = SubResource( 4 )
-text = "Restart"
 [connection signal="text_entered" from="VBoxContainer/InputContainer/PlayerText" to="." method="_on_PlayerText_text_entered"]
 [connection signal="pressed" from="VBoxContainer/InputContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/RestartContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
