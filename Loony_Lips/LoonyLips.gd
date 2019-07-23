@@ -4,7 +4,7 @@ extends Control
 var player_words = []
 var current_story = {}
 
-onready var PlayerText  = $VBoxContainer/InputContainer/PlayerText
+onready var PlayerText  = $VBoxContainer/InputContainer/PlayerText	# $node/node/node is shortcut for get_node()
 onready var DisplayText = $VBoxContainer/DisplayText
 
 func _ready():
@@ -13,6 +13,13 @@ func _ready():
 	# TODO: Insert timer here. Or not...
 	set_current_story()
 	check_player_words_length()
+
+
+func check_player_words_length():
+	if is_story_done():
+		end_game()
+	else:
+		prompt_player()
 
 
 func set_current_story():
@@ -50,13 +57,6 @@ func add_to_player_words():
 
 func is_story_done():
 	return player_words.size() == current_story.prompts.size()
-
-
-func check_player_words_length():
-	if is_story_done():
-		end_game()
-	else:
-		prompt_player()
 
 
 func tell_story():
