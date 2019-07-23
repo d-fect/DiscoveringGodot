@@ -1,0 +1,14 @@
+[
+    {
+    "prompts" : ["a name", "a noun", "an adverb", "an adjective"],
+    "story":"Once upon a time someone called %s ate a %s flavoured sandwich which made him feel all %s inside. It was a %s day!"
+    },
+    {
+    "story" : "Everyone %s %s! She was %s and %s!",
+    "prompts" : ["an emotion", "a name", "an adjective", "another adjective"]
+    },
+    {
+    "story" : "There was a hero called %s. He fought a %s with a %s. Everyone %s!",
+    "prompts" : ["a name", "a noun", "another noun", "a verb in past tense"]
+    }
+]
