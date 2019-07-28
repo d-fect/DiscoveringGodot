@@ -1,5 +1,5 @@
 # DiscoveringGodot
- For the Udemy course Discovering Godot by GameDev.tv
+ For the Udemy course [Discovering Godot](https://www.udemy.com/godot/learn/) by [GameDev.tv](https://www.gamedev.tv/)
 
 All games in the course are in this single repository, but each game exists in its separate sub-directory.
 
