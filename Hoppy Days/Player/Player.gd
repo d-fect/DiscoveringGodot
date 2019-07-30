@@ -7,15 +7,15 @@ var right : int = 0
 const SPEED : int = 1000
 const GRAVITY = 300
 const UP = Vector2(0, -1)
-const JUMP_SPEED = 3000
+const JUMP_SPEED = 3500
+
+signal animate
 
 func _physics_process(delta):				# Delta is time in seconds between frames
 	apply_gravity()
 	jump()
 	move()
 	animate()
-# Movement as given in course
-#	move_and_slide(motion, UP)
 # Movement as given by Samuli, see apply_gravity()-comments
 	motion = move_and_slide(motion, UP)
 
@@ -23,11 +23,7 @@ func _physics_process(delta):				# Delta is time in seconds between frames
 # Gravity calculation as given by Samuli (https://www.udemy.com/user/samuli-7/) in Q/A on lecture 36
 # This will fix a "bug" where rabbit won't always jump but feels a little stuck to the ground
 func apply_gravity():
-# Gravity-calculations as given by course
-#	if is_on_floor():
-#		motion.y = 0 
-#	else:
-#		motion.y += GRAVITY
+
 	motion.y += GRAVITY
 
 
@@ -40,13 +36,6 @@ func jump():
 # Idea is if left is pressed, it will have a value of -1 and if right is pressed, it will have a value of +1. 
 # If both are pressed, then no movement is made.
 func move():
-#	Movement function as given in course
-#	if Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
-#		motion.x = -SPEED
-#	elif Input.is_action_pressed("right") and not Input.is_action_pressed("left"):
-#		motion.x = SPEED
-#	else:
-#		motion.x = 0
 	right = int(Input.is_action_pressed("right"))
 	left = -int(Input.is_action_pressed("left"))
 	motion.x = (left + right) *  SPEED
@@ -54,23 +43,6 @@ func move():
 
 #Animation function as given by Rob (https://www.udemy.com/user/rob-van-putten-2/) in lecture 37
 func animate():
-# Animate as given by course
-#	if motion.y < 0:
-#		$AnimatedSprite.play("jump")
-#	elif motion.x < 0:
-#		$AnimatedSprite.flip_h = true
-#		$AnimatedSprite.play("walk")
-#	elif motion.x > 0:
-#		$AnimatedSprite.flip_h = false 
-#		$AnimatedSprite.play("walk")
-#	else:
-#		$AnimatedSprite.play("idle")
-	if motion.y < 0:
-		$AnimatedSprite.play("jump")
-	elif motion.x != 0:		
-		$AnimatedSprite.play("walk")		
-		$AnimatedSprite.set_flip_h(motion.x < 0)
-	else:
-		$AnimatedSprite.play("idle")
+	emit_signal("animate", motion)
 
 
