@@ -22,6 +22,7 @@ func _physics_process(delta):				# Delta is time in seconds between frames
 # Gravity calculation as given by Samuli (https://www.udemy.com/user/samuli-7/) in Q/A on lecture 36
 # This will fix a "bug" where rabbit won't always jump but feels a little stuck to the ground
 func apply_gravity():
+# Gravity-calculations as given by course
 #	if is_on_floor():
 #		motion.y = 0 
 #	else:
@@ -38,10 +39,6 @@ func jump():
 # Idea is if left is pressed, it will have a value of -1 and if right is pressed, it will have a value of +1. 
 # If both are pressed, then no movement is made.
 func move():
-	right = int(Input.is_action_pressed("right"))
-	left = -int(Input.is_action_pressed("left"))
-	motion.x = (left + right) *  SPEED
-
 #	Movement function as given in course
 #	if Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
 #		motion.x = -SPEED
@@ -49,3 +46,6 @@ func move():
 #		motion.x = SPEED
 #	else:
 #		motion.x = 0
+	right = int(Input.is_action_pressed("right"))
+	left = -int(Input.is_action_pressed("left"))
+	motion.x = (left + right) *  SPEED
