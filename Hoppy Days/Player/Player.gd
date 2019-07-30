@@ -13,6 +13,7 @@ func _physics_process(delta):				# Delta is time in seconds between frames
 	apply_gravity()
 	jump()
 	move()
+	animate()
 # Movement as given in course
 #	move_and_slide(motion, UP)
 # Movement as given by Samuli, see apply_gravity()-comments
@@ -31,7 +32,7 @@ func apply_gravity():
 
 
 func jump():
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_pressed("jump") and is_on_floor():
 		motion.y -= JUMP_SPEED
 
 
@@ -49,3 +50,27 @@ func move():
 	right = int(Input.is_action_pressed("right"))
 	left = -int(Input.is_action_pressed("left"))
 	motion.x = (left + right) *  SPEED
+
+
+#Animation function as given by Rob (https://www.udemy.com/user/rob-van-putten-2/) in lecture 37
+func animate():
+# Animate as given by course
+#	if motion.y < 0:
+#		$AnimatedSprite.play("jump")
+#	elif motion.x < 0:
+#		$AnimatedSprite.flip_h = true
+#		$AnimatedSprite.play("walk")
+#	elif motion.x > 0:
+#		$AnimatedSprite.flip_h = false 
+#		$AnimatedSprite.play("walk")
+#	else:
+#		$AnimatedSprite.play("idle")
+	if motion.y < 0:
+		$AnimatedSprite.play("jump")
+	elif motion.x != 0:		
+		$AnimatedSprite.play("walk")		
+		$AnimatedSprite.set_flip_h(motion.x < 0)
+	else:
+		$AnimatedSprite.play("idle")
+
+
