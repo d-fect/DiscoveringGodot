@@ -8,6 +8,7 @@ const SPEED : int = 1000
 const GRAVITY = 300
 const UP = Vector2(0, -1)					# This tells the game it's a side scroller
 const JUMP_SPEED = 4000
+const WORLD_BOTTOM = 5000
 
 signal animate
 
@@ -23,6 +24,8 @@ func _physics_process(delta):				# Delta is time in seconds between frames
 # Gravity calculation as given by Samuli (https://www.udemy.com/user/samuli-7/) in Q/A on lecture 36
 # This will fix a "bug" where rabbit won't always jump but feels a little stuck to the ground
 func apply_gravity():
+	if position.y > WORLD_BOTTOM:
+		end_game()
 	motion.y += GRAVITY
 
 
@@ -43,5 +46,9 @@ func move():
 #Animation function as given by Rob (https://www.udemy.com/user/rob-van-putten-2/) in lecture 37
 func animate():
 	emit_signal("animate", motion)
+
+
+func end_game():
+	get_tree().change_scene("res://Levels/GameOver.tscn")
 
 
