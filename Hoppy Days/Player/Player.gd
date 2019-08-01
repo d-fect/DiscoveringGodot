@@ -33,6 +33,7 @@ func apply_gravity():
 func jump():
 	if Input.is_action_pressed("jump") and is_on_floor():
 		motion.y -= JUMP_SPEED
+		$JumpSFX.play()
 
 
 # Movement calculation for left/right  as given by Jesse Wang (https://www.udemy.com/user/jesse-wang-5/) in Q&A on lecture 35
@@ -56,6 +57,7 @@ func end_game():
 func hurt():
 	motion.y -= JUMP_SPEED
 	lives -= 1
+	$PainSFX.play()
 	if lives < 0:
 		end_game()
 
