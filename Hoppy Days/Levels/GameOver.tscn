@@ -52,10 +52,12 @@ alignment = 1
 margin_left = 170.0
 margin_right = 546.0
 margin_bottom = 90.0
+focus_mode = 0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.235294, 0.235294, 0.235294, 1 )
 custom_colors/font_color_pressed = Color( 0.313726, 0.313726, 0.313726, 1 )
+enabled_focus_mode = 0
 text = "Try Again!"
 
 [node name="RestartButton" type="TextureButton" parent="CenterContainer/VBoxContainer/HBoxContainer"]
