@@ -10,6 +10,7 @@ const GRAVITY = 300
 const UP = Vector2(0, -1)					# This tells the game it's a side scroller
 const JUMP_SPEED = 4000
 const WORLD_BOTTOM = 5000
+const BOOST_MULTIPLIER = 1.5
 
 signal animate
 
@@ -60,5 +61,10 @@ func hurt():
 	$PainSFX.play()
 	if lives < 0:
 		end_game()
+
+
+func boost():
+	motion.y -= JUMP_SPEED * BOOST_MULTIPLIER
+
 
 
