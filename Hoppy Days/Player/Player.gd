@@ -10,6 +10,7 @@ const UP = Vector2(0, -1)					# This tells the game it's a side scroller
 const JUMP_SPEED = 4000
 const WORLD_BOTTOM = 5000
 const BOOST_MULTIPLIER = 1.5
+const HURT_MULTIPLIER = 1.7
 
 signal animate
 
@@ -56,5 +57,3 @@ func boost():
 func hurt():
 	motion.y -= JUMP_SPEED
 	$PainSFX.play()
-
-
