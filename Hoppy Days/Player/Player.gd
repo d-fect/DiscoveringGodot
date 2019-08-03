@@ -3,7 +3,6 @@ extends KinematicBody2D
 var motion : Vector2 = Vector2(0,0)
 var left : int = 0
 var right : int = 0
-var  lives : int = 3
 
 const SPEED : int = 1000
 const GRAVITY = 300
@@ -27,7 +26,7 @@ func _physics_process(delta):				# Delta is time in seconds between frames
 # This will fix a "bug" where rabbit won't always jump but feels a little stuck to the ground
 func apply_gravity():
 	if position.y > WORLD_BOTTOM:
-		end_game()
+		get_tree().call_group("Gamestate", "end_game")
 	motion.y += GRAVITY
 
 
@@ -46,25 +45,16 @@ func move():
 	motion.x = (left + right) *  SPEED
 
 
-#Animation function as given by Rob (https://www.udemy.com/user/rob-van-putten-2/) in lecture 37
 func animate():
 	emit_signal("animate", motion)
-
-
-func end_game():
-	get_tree().change_scene("res://Levels/GameOver.tscn")
-
-
-func hurt():
-	motion.y -= JUMP_SPEED
-	lives -= 1
-	$PainSFX.play()
-	if lives < 0:
-		end_game()
 
 
 func boost():
 	motion.y -= JUMP_SPEED * BOOST_MULTIPLIER
 
+
+func hurt():
+	motion.y -= JUMP_SPEED
+	$PainSFX.play()
 
 
