@@ -55,5 +55,5 @@ func boost():
 
 
 func hurt():
-	motion.y -= JUMP_SPEED
+	motion.y = -JUMP_SPEED
 	$PainSFX.play()
