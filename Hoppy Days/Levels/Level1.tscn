@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Levels/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://Items/Coin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Hazards/SpikeTop.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Hazards/SpikedTop.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Items/JumpPad.tscn" type="PackedScene" id=7]
-[ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=8]
-[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://NPCs/SpikeMan.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Items/JumpPad.tscn" type="PackedScene" id=8]
+[ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=9]
+[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=10]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
@@ -84,10 +85,12 @@ position = Vector2( 4614.97, 504.51 )
 position = Vector2( 4701.91, 591.454 )
 
 [node name="Hazards" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="SpikeTop" parent="Hazards" instance=ExtResource( 5 )]
-position = Vector2( 2060.97, 485.57 )
+position = Vector2( 2432.65, 3169.96 )
+
+[node name="SpikeTop7" parent="Hazards" instance=ExtResource( 5 )]
+position = Vector2( 2432.65, 3169.96 )
 
 [node name="SpikeTop2" parent="Hazards" instance=ExtResource( 5 )]
 position = Vector2( 2809.23, 742.939 )
@@ -116,30 +119,47 @@ position = Vector2( 6696.38, 1045.19 )
 [node name="SpikedTop4" parent="Hazards" instance=ExtResource( 6 )]
 position = Vector2( 6993.21, 1044.88 )
 
+[node name="NPCs" type="Node" parent="."]
+
+[node name="SpikeMan" parent="NPCs" instance=ExtResource( 7 )]
+position = Vector2( 2040, 435 )
+
+[node name="SpikeMan2" parent="NPCs" instance=ExtResource( 7 )]
+position = Vector2( 5884.94, 1137.28 )
+
+[node name="SpikeMan3" parent="NPCs" instance=ExtResource( 7 )]
+position = Vector2( 1855.06, 3185.3 )
+
+[node name="SpikeMan5" parent="NPCs" instance=ExtResource( 7 )]
+position = Vector2( 4231.54, 2674.42 )
+
+[node name="SpikeMan4" parent="NPCs" instance=ExtResource( 7 )]
+position = Vector2( 8589.61, 497.201 )
+
 [node name="JumpPads" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="JumpPad" parent="JumpPads" instance=ExtResource( 7 )]
+[node name="JumpPad" parent="JumpPads" instance=ExtResource( 8 )]
 position = Vector2( 3320.53, 1058.7 )
 
-[node name="JumpPad2" parent="JumpPads" instance=ExtResource( 7 )]
+[node name="JumpPad2" parent="JumpPads" instance=ExtResource( 8 )]
 position = Vector2( 3582.73, 1566.33 )
 
-[node name="JumpPad3" parent="JumpPads" instance=ExtResource( 7 )]
+[node name="JumpPad3" parent="JumpPads" instance=ExtResource( 8 )]
 position = Vector2( 4205.35, 1318.08 )
 
-[node name="JumpPad4" parent="JumpPads" instance=ExtResource( 7 )]
+[node name="JumpPad4" parent="JumpPads" instance=ExtResource( 8 )]
 position = Vector2( 3708.46, 1310.92 )
 
-[node name="JumpPad5" parent="JumpPads" instance=ExtResource( 7 )]
+[node name="JumpPad5" parent="JumpPads" instance=ExtResource( 8 )]
 position = Vector2( 1443.61, 482.114 )
 
-[node name="JumpPad6" parent="JumpPads" instance=ExtResource( 7 )]
+[node name="JumpPad6" parent="JumpPads" instance=ExtResource( 8 )]
 position = Vector2( 2609.97, 739.705 )
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 9 )
 volume_db = -15.007
 autoplay = true
 
-[node name="GUI" parent="." instance=ExtResource( 9 )]
+[node name="GUI" parent="." instance=ExtResource( 10 )]

@@ -51,7 +51,7 @@ func animate():
 
 
 func boost():
-	motion.y -= JUMP_SPEED * BOOST_MULTIPLIER
+	motion.y = -JUMP_SPEED * BOOST_MULTIPLIER
 
 
 func hurt():
