@@ -34,7 +34,10 @@ func apply_gravity():
 func jump():
 	if Input.is_action_pressed("jump") and is_on_floor():
 		motion.y -= JUMP_SPEED
-		$JumpSFX.play()
+		# $JumpSFX.play()
+		# Let's play a random jump sound :D
+		$JumpBoing.stream = load("res://SFX/Boing/boing_" + str(randi() % 13) + ".wav")
+		$JumpBoing.play()
 
 
 # Movement calculation for left/right  as given by Jesse Wang (https://www.udemy.com/user/jesse-wang-5/) in Q&A on lecture 35

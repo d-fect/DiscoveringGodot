@@ -29,6 +29,7 @@ __meta__ = {
 }
 
 [node name="Coins" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Coin" parent="Coins" instance=ExtResource( 4 )]
 position = Vector2( 819.158, 468.876 )
@@ -148,6 +149,7 @@ position = Vector2( 6696.38, 1045.19 )
 position = Vector2( 6993.21, 1044.88 )
 
 [node name="NPCs" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="SpikeMan" parent="NPCs" instance=ExtResource( 7 )]
 position = Vector2( 906.277, 1647.23 )
@@ -168,6 +170,7 @@ position = Vector2( 8589.61, 497.201 )
 position = Vector2( 708.621, -108.537 )
 
 [node name="JumpPads" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="JumpPad" parent="JumpPads" instance=ExtResource( 9 )]
 position = Vector2( 3320.53, 1058.7 )

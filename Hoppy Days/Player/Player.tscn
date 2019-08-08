@@ -82,4 +82,7 @@ volume_db = -15.0
 [node name="PainSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -10.0
+
+[node name="JumpBoing" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
