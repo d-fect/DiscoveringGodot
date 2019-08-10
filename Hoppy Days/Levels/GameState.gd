@@ -5,6 +5,7 @@ var coins : int = 0
 var coin_target : int = 10
 
 func _ready():
+	# OS.window_fullscreen = true
 	add_to_group("Gamestate")
 	update_GUI()
 
@@ -36,3 +37,7 @@ func update_GUI():
 
 func end_game():
 	get_tree().change_scene("res://Levels/GameOver.tscn")
+
+
+func win_game():
+	get_tree().change_scene("res://Levels/Victory.tscn")

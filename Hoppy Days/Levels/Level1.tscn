@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Levels/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Items/JumpPad.tscn" type="PackedScene" id=9]
 [ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=10]
 [ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Items/Portal.tscn" type="PackedScene" id=12]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
@@ -170,31 +171,30 @@ position = Vector2( 8589.61, 497.201 )
 position = Vector2( 708.621, -108.537 )
 
 [node name="JumpPads" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="JumpPad" parent="JumpPads" instance=ExtResource( 9 )]
-position = Vector2( 3320.53, 1058.7 )
+position = Vector2( 3320.53, 1034.85 )
 
 [node name="JumpPad7" parent="JumpPads" instance=ExtResource( 9 )]
 position = Vector2( 1825.93, 1610.97 )
 
 [node name="JumpPad2" parent="JumpPads" instance=ExtResource( 9 )]
-position = Vector2( 3582.73, 1566.33 )
+position = Vector2( 3579.72, 1545.49 )
 
 [node name="JumpPad3" parent="JumpPads" instance=ExtResource( 9 )]
-position = Vector2( 4205.35, 1318.08 )
+position = Vector2( 4205.35, 1294.23 )
 
 [node name="JumpPad4" parent="JumpPads" instance=ExtResource( 9 )]
-position = Vector2( 3708.46, 1310.92 )
+position = Vector2( 3709.97, 1291.59 )
 
 [node name="JumpPad5" parent="JumpPads" instance=ExtResource( 9 )]
-position = Vector2( 1443.61, 482.114 )
+position = Vector2( 1443.61, 458.264 )
 
 [node name="JumpPad8" parent="JumpPads" instance=ExtResource( 9 )]
-position = Vector2( 486.953, 1491.77 )
+position = Vector2( 489.603, 1481.17 )
 
 [node name="JumpPad6" parent="JumpPads" instance=ExtResource( 9 )]
-position = Vector2( 2609.97, 739.705 )
+position = Vector2( 2609.97, 715.855 )
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
@@ -202,3 +202,6 @@ volume_db = -15.007
 autoplay = true
 
 [node name="GUI" parent="." instance=ExtResource( 11 )]
+
+[node name="Portal" parent="." instance=ExtResource( 12 )]
+position = Vector2( 11180.7, 997.084 )
