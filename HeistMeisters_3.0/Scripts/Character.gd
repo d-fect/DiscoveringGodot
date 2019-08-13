@@ -1,5 +1,5 @@
 extends KinematicBody2D
 
-const SPEED : int = 10
-const MAX_SPEED : int = 20
-const FRICTION : float = 0.1	# How long it tkaes to stop, 0.1 seconds
+const SPEED : int = 100
+const MAX_SPEED : int = 200
+const FRICTION : float = 0.05	# Smaller = longer stopping time. Do NOT set >= 1.00
